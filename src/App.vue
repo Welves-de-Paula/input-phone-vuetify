@@ -38,22 +38,27 @@
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <AppWhatsappField v-model="phone"/>
+      <!-- <HelloWorld/> -->
+      {{phone}}
     </v-main>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld';
+import AppWhatsappField from './components/ui/AppWhatsappField';
 
 export default {
   name: 'App',
 
   components: {
     HelloWorld,
+    AppWhatsappField
   },
 
   data: () => ({
+    phone: null
     //
   }),
 };
