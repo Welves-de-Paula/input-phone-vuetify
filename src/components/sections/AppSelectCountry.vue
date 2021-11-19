@@ -8,7 +8,8 @@
     <v-card>
       <v-card-title> Selecione um pais </v-card-title>
       <v-card-text>
-        <v-autocomplete
+        <v-text-field v-model="search" :loading="loading"></v-text-field>
+        <!-- <v-autocomplete
           v-model="country"
           :loading="loading"
           :items="items"
@@ -21,7 +22,20 @@
           hide-details
           return-object
           :item-text="getText"
-        />
+        /> -->
+
+        <v-list dense>
+          <v-list-item-group v-model="country" color="primary">
+            <v-list-item v-for="(item, i) in items" :key="i">
+              <!-- <v-list-item-icon>
+            <v-icon v-text="item.icon"></v-icon>
+          </v-list-item-icon> -->
+              <v-list-item-content>
+                <v-list-item-title>{{ item }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
 
         <!-- -->
 
