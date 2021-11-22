@@ -8,6 +8,7 @@
     <v-card>
       <v-card-title> Selecione um pais </v-card-title>
       <v-card-text>
+        <v-btn @click="tt()" color="success">text</v-btn>
         <v-text-field v-model="search" :loading="loading"></v-text-field>
         <!-- <v-autocomplete
           v-model="country"
@@ -56,6 +57,7 @@
 
 <script>
 import PhoneCodesList from "@/enums/PhoneCodesList";
+import { teste } from "@/utils/ComponentFunctions";
 export default {
   data() {
     return {
@@ -73,6 +75,11 @@ export default {
     },
   },
   methods: {
+    tt() {
+      // console.log("teste");
+      teste();
+    },
+
     getText(item) {
       return `(+${item.ddiCode}) ${item.country}`;
     },
