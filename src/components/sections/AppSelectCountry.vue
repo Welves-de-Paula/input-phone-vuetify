@@ -28,9 +28,9 @@
         <v-list dense>
           <v-list-item-group v-model="country" color="primary">
             <v-list-item v-for="(item, i) in items" :key="i">
-              <!-- <v-list-item-icon>
-            <v-icon v-text="item.icon"></v-icon>
-          </v-list-item-icon> -->
+              <v-list-item-icon>
+                <span :class="item.isoCode.toLowerCase()" class="vti__flag" />
+              </v-list-item-icon>
               <v-list-item-content>
                 <v-list-item-title>{{ item }}</v-list-item-title>
               </v-list-item-content>
@@ -98,5 +98,6 @@ export default {
   },
 };
 </script>
+<style src="../../assets/flags.css"></style>
 
 <style></style>
