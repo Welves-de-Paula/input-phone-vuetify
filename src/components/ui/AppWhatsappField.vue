@@ -39,7 +39,7 @@ export default {
 
   computed: {
     teste() {
-      return PhoneNumber(this.phone.toString()).getRegionCode();
+      //    return PhoneNumber(this.phone.toString()).getRegionCode();
     },
   },
 

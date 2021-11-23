@@ -57,7 +57,7 @@
 
 <script>
 import PhoneCodesList from "@/enums/PhoneCodesList";
-import { teste } from "@/utils/ComponentFunctions";
+import { searchCountry } from "@/utils/ComponentFunctions";
 export default {
   data() {
     return {
@@ -77,24 +77,16 @@ export default {
   methods: {
     tt() {
       // console.log("teste");
-      teste();
+      // teste();
     },
 
     getText(item) {
       return `(+${item.ddiCode}) ${item.country}`;
     },
     querySelections(v) {
-      this.loading = true;
-      // Simulated ajax query
-      setTimeout(() => {
-        this.items = this.countries.filter((e) => {
-          return (
-            (e.country || "").toLowerCase().indexOf((v || "").toLowerCase()) >
-            -1
-          );
-        });
-        this.loading = false;
-      }, 500);
+      searchCountry(v).then((response) => {
+        this.items = response;
+      });
     },
     open() {
       this.dialog = true;
